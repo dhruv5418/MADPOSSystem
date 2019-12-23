@@ -11,6 +11,9 @@ import android.widget.RadioButton;
 import com.example.madpossystem.R;
 import com.example.madpossystem.controller.calculate;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -68,11 +71,10 @@ double pricebeforetaxes;
         calculate.total();
         double taxes=calculate.getTaxes();
         double total=calculate.getTotal();
-        editText2.setText(taxes+"");
-       editText2.setFocusable(false);
-       editText3.setText(total+"");
-       editText3.setFocusable(false);
-
+        editText2.setText(BigDecimal.valueOf(taxes).setScale(0, RoundingMode.HALF_EVEN).toPlainString());
+        editText2.setFocusable(false);
+        editText3.setText(BigDecimal.valueOf(total).setScale(0, RoundingMode.HALF_EVEN).toPlainString());
+        editText3.setFocusable(false);
 
     }
 
