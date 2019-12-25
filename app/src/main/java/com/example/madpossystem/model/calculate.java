@@ -1,4 +1,4 @@
-package com.example.madpossystem.controller;
+package com.example.madpossystem.model;
 
 import android.widget.EditText;
 
@@ -12,16 +12,20 @@ private Double taxes;
 private Double subtotal;
 private Double total;
 
+    /**
+     *
+     * @param price
+     * @param quantity
+     */
     public calculate(Double price, Integer quantity) {
         this.price = price;
         this.quantity = quantity;
     }
-   /* public Double taxes() {
-        subtotal=price*quantity;
-        taxes=(subtotal)*0.15;
-        return taxes;
-    }*/
 
+    /**
+     *
+     * @return
+     */
     public Double total(){
         subtotal=price*quantity;
         taxes=(subtotal)*0.15;
@@ -30,12 +34,18 @@ private Double total;
     }
 
 
-
-
+    /**
+     *
+     * @return
+     */
     public Double getTaxes() {
         return this.taxes;
     }
 
+    /**
+     *
+     * @return
+     */
     public Double getTotal() {
         return this.total;
     }

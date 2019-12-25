@@ -9,7 +9,10 @@ import android.widget.TextView;
 import com.example.madpossystem.R;
 
 public class ThirdActivity extends AppCompatActivity {
-
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

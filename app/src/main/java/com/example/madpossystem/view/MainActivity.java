@@ -9,13 +9,17 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 import com.example.madpossystem.R;
-import com.example.madpossystem.controller.calculate;
+import com.example.madpossystem.controller.ControlCalculate;
+import com.example.madpossystem.model.calculate;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class MainActivity extends AppCompatActivity {
-
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     }
 double pricebeforetaxes;
 
+    /**
+     *
+     * @param view
+     */
     public void radioCheckedChanged(View view) {
         RadioButton r4 = (RadioButton) findViewById(R.id.radioButton4);
         RadioButton r3 = (RadioButton) findViewById(R.id.radioButton3);
@@ -61,16 +69,21 @@ double pricebeforetaxes;
 
     }
 
+    /**
+     *
+     * @param view
+     */
     public void calculation(View view) {
 
         EditText editText1=(EditText)findViewById(R.id.editText7);
         EditText editText2=(EditText)findViewById(R.id.editText10);
         EditText editText3=(EditText)findViewById(R.id.editText12);
-        Integer quantity=Integer.parseInt(editText1.getText().toString());;
-        calculate calculate=new calculate(pricebeforetaxes,quantity);
-        calculate.total();
-        double taxes=calculate.getTaxes();
-        double total=calculate.getTotal();
+        Integer quantity=Integer.parseInt(editText1.getText().toString());
+        ControlCalculate controlCalculate=new ControlCalculate();
+        controlCalculate.crateObject(pricebeforetaxes,quantity);
+        controlCalculate.total();
+        double taxes=controlCalculate.getTaxes();
+        double total=controlCalculate.getTotal();
         editText2.setText(BigDecimal.valueOf(taxes).setScale(0, RoundingMode.HALF_EVEN).toPlainString());
         editText2.setFocusable(false);
         editText3.setText(BigDecimal.valueOf(total).setScale(0, RoundingMode.HALF_EVEN).toPlainString());
@@ -78,6 +91,10 @@ double pricebeforetaxes;
 
     }
 
+    /**
+     *
+     * @param view
+     */
     public void launchSecondActivity(View view) {
         Intent intent=new Intent(this,SecondActivity.class);
         startActivity(intent);

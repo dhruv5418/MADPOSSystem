@@ -12,6 +12,11 @@ import com.example.madpossystem.R;
 public class SecondActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE ="com.example.android.twoactivities.extra.MESSAGE";
     private EditText mMessageEditText;
+
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +24,10 @@ public class SecondActivity extends AppCompatActivity {
         mMessageEditText=findViewById(R.id.editText_second);
     }
 
-
+    /**
+     *
+     * @param view
+     */
     public void launchThirdActivity(View view) {
         Intent intent=new Intent(this,ThirdActivity.class);
         String message=mMessageEditText.getText().toString();
