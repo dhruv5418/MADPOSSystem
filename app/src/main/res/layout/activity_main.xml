@@ -112,7 +112,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -133,7 +134,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:focusable="false"
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -154,7 +157,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:focusable="false"
+                        />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
