@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.madpossystem.R;
 
@@ -29,10 +31,16 @@ public class SecondActivity extends AppCompatActivity {
      * @param view
      */
     public void launchThirdActivity(View view) {
-        Intent intent=new Intent(this,ThirdActivity.class);
-        String message=mMessageEditText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE,message);
-        startActivity(intent);
+        if(mMessageEditText.length()==0){
+            Toast.makeText(getApplicationContext(),"Please enter message",Toast.LENGTH_LONG).show();
+        }
+        else{
+            Intent intent=new Intent(this,ThirdActivity.class);
+            String message=mMessageEditText.getText().toString();
+            intent.putExtra(EXTRA_MESSAGE,message);
+            startActivity(intent);
+
+        }
 
     }
 }
