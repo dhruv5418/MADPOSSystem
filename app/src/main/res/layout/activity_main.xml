@@ -240,7 +240,8 @@
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="CALCULATOR" />
+                    android:text="CALCULATOR"
+                    android:onClick="launchCalculatorActivity"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -111,4 +111,9 @@ double priceBeforeTaxes;
         Intent intent=new Intent(this,SecondActivity.class);
         startActivity(intent);
     }
+
+    public void launchCalculatorActivity(View view) {
+        Intent intent=new Intent(this,CalculatorActivity.class);
+        startActivity(intent);
+    }
 }
