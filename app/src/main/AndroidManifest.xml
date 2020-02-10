@@ -8,7 +8,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.CalculatorActivity"></activity>
+        <activity
+            android:name=".view.CalculatorActivity"
+            android:label="Calculator"
+            android:parentActivityName=".view.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.madpossystem.view.MainActivity" />
+        </activity>
         <activity
             android:name=".view.ThirdActivity"
             android:label="Third Activity"
