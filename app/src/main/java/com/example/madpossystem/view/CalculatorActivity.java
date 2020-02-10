@@ -13,153 +13,159 @@ import android.widget.Toast;
 
 import com.example.madpossystem.R;
 
-public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener {
+public class CalculatorActivity extends AppCompatActivity {
     Button button;
     private double firstNumber = Double.MIN_VALUE;
     private double secondNumber = Double.MIN_VALUE;
     private String operator = "";
     private TextView screen;
-   /* private String str1,str2,str3,result,str,sign;
-    private Double a,b;*/
+   private String str2,str1,result,str,sign,dot,oper,signReviser,check;
+    private Double a,b;
+    int[] ids;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
         screen = (TextView) findViewById(R.id.result_screen);
-        int[] ids = {R.id.button14, R.id.button15,R.id.button16, R.id.button17,R.id.button18, R.id.button19,R.id.button20,
-                R.id.button21,R.id.button22, R.id.button23,R.id.button24,R.id.button25,R.id.button26,R.id.button27,
-                R.id.button28,R.id.button29,R.id.button30, R.id.button31,R.id.button32,R.id.button33};
-        for (int id:ids) {
+        str = "";
+        result = "";
+        check = "";
+        dot = "";
+        signReviser = "";
+        int[] ids = {R.id.button15,R.id.button14, R.id.button17, R.id.button18, R.id.button19, R.id.button20,
+                R.id.button21, R.id.button22, R.id.button24, R.id.button25, R.id.button26, R.id.button32};
+        int[] ids1 = {R.id.button31, R.id.button16, R.id.button23, R.id.button27,};
+        int[] ids2 = {R.id.button33};
+        int[] ids3 = {R.id.button28, R.id.button32};
+        int[] ids4 = {R.id.button30,R.id.button29};
+        for (int id : ids1) {
             Button b = (Button) findViewById(id);
-            b.setOnClickListener(this);
-        }
+            b.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Button button = (Button) v;
+                    sign = ((Button) v).getText().toString();
+                    screen.setText(sign);
 
+                    if (signReviser.equals("")) {
+                        if (str.equals("")) {
+                            a = Double.parseDouble(result);
+                        } else {
+                            a = Double.parseDouble(str);
+                            str1 = str;
+                            str = "";
+                            dot = "";
 
-      /* ViewGroup rootView = (ViewGroup) findViewById(R.id.rootlayout);
-        View v;
-        for (int i = 0; i < rootView.getChildCount(); i++) {
-            v = rootView.getChildAt(i);
-            if (v instanceof Button)
-            {v.setOnClickListener(this);
-            }
-
-        }*/
-    }
-
-
-
-    public void onClick(View view) {
-        if(view instanceof Button) {
-
-            Button button = (Button)view;
-            String buttonValue = button.getText().toString();
-
-            // Check whether the button's text is a number or not.
-            int buttonNumber = isInteger(buttonValue);
-
-            if(buttonNumber != -1||".".equals(buttonValue))
-            {
-                // Get current edit text box value.
-                String currentValue = screen.getText().toString();
-
-                if(isInteger(currentValue) > 0||".".equals(buttonValue))
-                {
-                    // If current value is a number then append new number to the end.
-                    currentValue += buttonValue;
-                    screen.setText(currentValue);
-                }
-                else
-                {
-                    // Append the button number to edit text box.
-                    screen.setText(buttonValue);
-                }
-
-            } else
-            {
-                // If the button is operator button.
-                if("+".equals(buttonValue) || "-".equals(buttonValue) || "×".equals(buttonValue) || "÷".equals(buttonValue))
-                {
-                    // Get current number.
-                    String currentValue = screen.getText().toString();
-                    if(isInteger(currentValue) > -1)
-                    {
-                        // Save it's value in firstNumber if the value is a number.
-                        firstNumber = Double.parseDouble(currentValue);
-                    }else
-                    {
-                        // Reset firstNumber value.
-                        firstNumber = Double.MIN_VALUE;
-                    }
-
-                    // Save the operator.
-                    operator = buttonValue;
-                    // Show operator in edit text box.
-                    screen.setText(buttonValue);
-                }else if("C".equals(buttonValue))
-                {
-                    // If user click c button then reset all value.
-                    firstNumber = Double.MIN_VALUE;
-                    secondNumber = Double.MIN_VALUE;
-                    // Display empty string in edit text box.
-                    screen.setText("");
-                }else if("⌫".equals(buttonValue)) {
-                    if (screen.getText().length() > 0) {
-                        String currentValue = screen.getText().toString();
-                        if (currentValue.length() > 1) {
-                            currentValue = currentValue.substring(0, currentValue.length() - 1);
-                            screen.setText(currentValue);
-                        } else if (currentValue.length() <= 1) {
-                            screen.setText("0");
                         }
-
                     }
                 }
-                else if("=".equals(buttonValue))
-                {
-                    // Get current number.
-                    String currentValue = screen.getText().toString();
-                    if(isInteger(currentValue) > -1)
-                    {
-                        // Save it's value in secondNumber if the value is a number.
-                        secondNumber = Double.parseDouble(currentValue);
-                    }else
-                    {
-                        // Reset firstNumber value.
-                        secondNumber = Double.MIN_VALUE;
+            });
+
+        }
+        for (int id : ids) {
+            Button b = (Button) findViewById(id);
+            b.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Button button = (Button) v;
+                    result = "";
+                    check = ((Button) v).getText().toString();
+                    if (check.equals(".") && dot.equals("")) {
+
+                        dot = ".";
+                        str += button.getText().toString();
+                    } else if (!check.equals(".")) {
+                        str += button.getText().toString();
                     }
+                    screen.setText(str);
+                }
 
-                    // If the button is equal button.
-                    if(firstNumber > Long.MIN_VALUE && secondNumber > Long.MIN_VALUE) {
 
-                        double resultNumber = 0;
+            });
 
-                        // Calculate the result number.
-                        if ("+".equals(operator)) {
-                            resultNumber = firstNumber + secondNumber;
-                        }else if("-".equals(operator))
-                        {
-                            resultNumber = firstNumber - secondNumber;
-                        }else if("×".equals(operator))
-                        {
-                            resultNumber = firstNumber * secondNumber;
-                        }else if("÷".equals(operator))
-                        {
-                            resultNumber = firstNumber / secondNumber;
+        }
+        for (int id : ids2) {
+            Button b1 = (Button) findViewById(id);
+            b1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Button button = (Button) v;
+                    str = screen.getText().toString();
+                    b = Double.parseDouble(str);
+                    if (sign.equals("+")) {
+                        result = a + b + "";
+                    } else if (sign.equals("-")) {
+                        result = a - b + "";
+                    } else if (sign.equals("×")) {
+                        result = a * b + "";
+                    } else if (sign.equals("÷")) {
+                        result = a / b + "";
+                    } else {
+                        result = "Something went wrong";
+                    }
+                    screen.setText(result);
+                    str = "";
+                    signReviser = "";
+                }
+            });
+        }
+        for (int id : ids3) {
+            Button b1 = (Button) findViewById(id);
+            b1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Button button = (Button) v;
+                    String buttonValue = button.getText().toString();
+                    if ("C".equals(buttonValue)) {
+                        a = 0.0;
+                        b = 0.0;
+                        str = "";
+                        result = "";
+                        screen.setText("0");
+
+                    } else {
+                        if (screen.getText().length() > 0) {
+                            str=str.substring(0,str.length() - 1);
+                            screen.setText(str);
                         }
-
-                        // Show the result number.
-                        screen.setText(String.valueOf(resultNumber));
-                        // Save the result number as second result number.
-                        secondNumber = resultNumber;
-                        // Reset first number.
-                        firstNumber = Double.MIN_VALUE;
                     }
+
                 }
-            }
-
+            });
         }
+        for (int id : ids4) {
+            Button b = (Button) findViewById(id);
+            b.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Button button=((Button)v);
+                    String buttonValue = button.getText().toString();
+                    if(buttonValue.equals("M"))
+                    {
+                        if (result.length()>0){
+                            str2=result;
+                            Toast.makeText(getApplicationContext(),"Saved in memory",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    else{
+
+                    if(str2.length()>0){
+                        str=str2;
+                        screen.setText(str);
+                    }
+                    }
+
+                }
+            });
         }
 
+  /*  public void valueEnter(View view) {
+        Button button = (Button) view;
+        str += button.getText().toString();
+        screen.setText(str);
+        a = Double.parseDouble(str);
+        }
+*/
 
       /*  button = (Button)view;
         str += button.getText().toString();
@@ -167,7 +173,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         a = Double.parseDouble(str);*/
 
 
-   /* public void onClickSigns(View view) {
+   /*public void onClickSigns(View view) {
         Button button = (Button) view;
         sign = ((Button) view).getText().toString();
         screen.setText(sign);
@@ -194,9 +200,9 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
             result = "Something went wrong";
         }
         screen.setText(result);
-    }
+    }*/
 
-    public void clear(View view) {
+ /*   public void clear(View view) {
 
         a=Double.MIN_VALUE;
         b=Double.MIN_VALUE;
@@ -212,16 +218,18 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         }
 
     }*/
-    private int isInteger(String value)
+  /*  private double isInteger(String value)
     {
-        int ret = -1;
+        double ret = -1.0;
         try {
-            ret = Integer.parseInt(value);
+            ret = Double.parseDouble(value);
         }catch(NumberFormatException ex)
         {
 
         }finally {
             return ret;
         }
+    }*/
+
     }
 }

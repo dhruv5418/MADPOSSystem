@@ -51,10 +51,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/white"
-                android:text="⌫"
+                android:text="M"
                 android:textColor="#F98C37"
-                android:textSize="40sp"
-                />
+                android:textSize="40sp" />
 
             <Button
                 android:id="@+id/button30"
@@ -62,10 +61,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/white"
-                android:text="%"
+                android:text="MR"
                 android:textColor="#F98C37"
-                android:textSize="40sp"
-                />
+                android:textSize="40sp" />
 
             <Button
                 android:id="@+id/button31"
@@ -235,6 +233,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/white"
+                android:text="."
                 android:textSize="40sp" />
 
             <Button
@@ -252,7 +251,8 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
-                android:text="."
+                android:text="⌫"
+                android:textColor="#F98C37"
                 android:textSize="40sp" />
 
             <Button
