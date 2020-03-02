@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -14,12 +15,8 @@ import android.widget.Toast;
 import com.example.madpossystem.R;
 
 public class CalculatorActivity extends AppCompatActivity {
-    Button button;
-    private double firstNumber = Double.MIN_VALUE;
-    private double secondNumber = Double.MIN_VALUE;
-    private String operator = "";
     private TextView screen;
-   private String str2,str1,result,str,sign,dot,oper,signReviser,check;
+   private String str2,result,str,sign,dot,signReviser,check;
     private Double a,b;
     int[] ids;
     @Override
@@ -52,7 +49,6 @@ public class CalculatorActivity extends AppCompatActivity {
                             a = Double.parseDouble(result);
                         } else {
                             a = Double.parseDouble(str);
-                            str1 = str;
                             str = "";
                             dot = "";
 
@@ -157,6 +153,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 }
             });
+
         }
 
   /*  public void valueEnter(View view) {

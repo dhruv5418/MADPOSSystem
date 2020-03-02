@@ -222,19 +222,22 @@
                     android:id="@+id/button5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="SMS" />
+                    android:text="SMS"
+                    android:onClick="launchSmsActivity"/>
 
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="EMAIL" />
+                    android:text="EMAIL"
+                    android:onClick="launchEmailActivity"/>
 
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="CALL" />
+                    android:text="CALL"
+                    android:onClick="launchCallActivity"/>
 
                 <Button
                     android:id="@+id/button2"

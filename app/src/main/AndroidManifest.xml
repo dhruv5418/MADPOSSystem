@@ -1,13 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.madpossystem">
-
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".view.EmailActivity"
+            android:label="E-mail"
+            android:parentActivityName=".view.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.madpossystem.view.MainActivity" />
+        </activity>
+        <activity android:name=".view.SmsActivity"
+            android:label="SMS"
+            android:parentActivityName=".view.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.madpossystem.view.MainActivity" />
+        </activity>
+        <activity android:name=".view.CallActivity"
+            android:label="Call"
+            android:parentActivityName=".view.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.madpossystem.view.MainActivity" />
+        </activity>
         <activity
             android:name=".view.CalculatorActivity"
             android:label="Calculator"

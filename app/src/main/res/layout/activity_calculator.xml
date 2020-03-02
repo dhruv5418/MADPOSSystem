@@ -17,6 +17,7 @@
             android:id="@+id/result_screen"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:background="#00070707"
             android:text="@string/result_screen"
             android:textSize="40sp" />
     </LinearLayout>
@@ -42,8 +43,7 @@
                 android:background="@color/white"
                 android:text="C"
                 android:textColor="#F98C37"
-                android:textSize="40sp"
-                />
+                android:textSize="40sp" />
 
             <Button
                 android:id="@+id/button29"
@@ -73,8 +73,7 @@
                 android:background="@color/white"
                 android:text="÷"
                 android:textColor="#F98C37"
-                android:textSize="40sp"
-                />
+                android:textSize="40sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -121,8 +120,7 @@
                 android:background="@color/white"
                 android:text="×"
                 android:textColor="#F98C37"
-                android:textSize="40sp"
-                />
+                android:textSize="40sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -169,8 +167,7 @@
                 android:background="@color/white"
                 android:text="-"
                 android:textColor="#F98C37"
-                android:textSize="40sp"
-                />
+                android:textSize="40sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -217,8 +214,7 @@
                 android:background="@color/white"
                 android:text="+"
                 android:textColor="#F98C37"
-                android:textSize="40sp"
-                />
+                android:textSize="40sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -262,8 +258,7 @@
                 android:background="@color/white"
                 android:text="="
                 android:textColor="#F98C37"
-                android:textSize="40sp"
-                />
+                android:textSize="40sp" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

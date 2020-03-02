@@ -5,4 +5,6 @@
     <string name="button_second">SEND</string>
     <string name="hint"><font size="18">Name</font></string>
     <string name="result_screen">0</string>
+    <string name="compose_email">Compose Email</string>
+    <string name="call_permission_denied_message">Call permission denied</string>
 </resources>

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -12,7 +11,6 @@ import android.widget.Toast;
 
 import com.example.madpossystem.R;
 import com.example.madpossystem.controller.ControlCalculate;
-import com.example.madpossystem.model.calculate;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -116,4 +114,21 @@ double priceBeforeTaxes;
         Intent intent=new Intent(this,CalculatorActivity.class);
         startActivity(intent);
     }
+
+    public void launchEmailActivity(View view) {
+        Intent intent=new Intent(this, EmailActivity.class);
+        startActivity(intent);
+    }
+
+    public void launchSmsActivity(View view) {
+        Intent intent=new Intent(this, SmsActivity.class);
+        startActivity(intent);
+    }
+
+
+    public void launchCallActivity(View view) {
+        Intent intent=new Intent(this, CallActivity.class);
+        startActivity(intent);
+    }
+
 }
