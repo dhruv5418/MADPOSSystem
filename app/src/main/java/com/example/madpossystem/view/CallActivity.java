@@ -19,9 +19,24 @@ import com.example.madpossystem.R;
 public class CallActivity extends AppCompatActivity {
 
 
+    /**
+     * final int variable call request
+     */
     private final int CALL_REQUEST = 100;
+    /**
+     * edit text field for mobileNO
+     */
     EditText mobileNoEt;
+    /**
+     * Button for calling
+     */
     Button callBt;
+
+    /**
+     * on create method
+     * contains onClickListener for call button.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +51,10 @@ public class CallActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * contains code for call permission and call intent.
+     */
     public void dialCall() {
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -55,6 +74,13 @@ public class CallActivity extends AppCompatActivity {
             ex.printStackTrace();
         }
     }
+
+    /**
+     * after giving permission request check for condition.
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions,
                                            int[] grantResults)

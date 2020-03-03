@@ -14,6 +14,10 @@ import com.example.madpossystem.R;
 
 public class EmailActivity extends AppCompatActivity {
 
+    /**
+     * contains onClickListener for send button.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,9 @@ public class EmailActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * contains email intent.
+     */
     protected void sendEmail() {
         Log.i("Send email", "");
         String[] TO = {""};

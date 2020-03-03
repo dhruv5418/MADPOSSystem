@@ -9,8 +9,9 @@ import android.widget.TextView;
 import com.example.madpossystem.R;
 
 public class ThirdActivity extends AppCompatActivity {
+
     /**
-     *
+     *on create method with showing string received with intent.
      * @param savedInstanceState
      */
     @Override

@@ -15,10 +15,29 @@ import android.widget.Toast;
 import com.example.madpossystem.R;
 
 public class CalculatorActivity extends AppCompatActivity {
+
+    /**
+     * Type TextView to store screen view
+     */
     private TextView screen;
+    /**
+     * Strings for store calculation
+     */
    private String str2,result,str,sign,dot,signReviser,check;
+    /**
+     * To store user input for calculation
+     */
     private Double a,b;
+    /**
+     * Array to store ButtonID
+     */
     int[] ids;
+
+    /**
+     * on create method
+     * contains all code for calculator functionality.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -155,78 +174,6 @@ public class CalculatorActivity extends AppCompatActivity {
             });
 
         }
-
-  /*  public void valueEnter(View view) {
-        Button button = (Button) view;
-        str += button.getText().toString();
-        screen.setText(str);
-        a = Double.parseDouble(str);
-        }
-*/
-
-      /*  button = (Button)view;
-        str += button.getText().toString();
-        screen.setText(str);
-        a = Double.parseDouble(str);*/
-
-
-   /*public void onClickSigns(View view) {
-        Button button = (Button) view;
-        sign = ((Button) view).getText().toString();
-        screen.setText(sign);
-        str="";
-    }
-
-    public void calculate(View view) {
-        Button button = (Button) view;
-        str2 = screen.getText().toString();
-        b = Double.parseDouble(str2);
-        if (sign .equals("+")){
-            result = a+b+"";
-        }
-        else if (sign .equals("-")){
-            result = a-b+"";
-        }
-        else if (sign .equals("X")){
-            result = a*b+"";
-        }
-        else if (sign .equals("÷")){
-            result = a/b+"";
-        }
-        else{
-            result = "Something went wrong";
-        }
-        screen.setText(result);
-    }*/
-
- /*   public void clear(View view) {
-
-        a=Double.MIN_VALUE;
-        b=Double.MIN_VALUE;
-        screen.setText("");
-
-    }
-
-    public void backspace(View view) {
-        if(screen.getText().length()>0){
-            str.replace(str.substring(str.length()-1), "");
-            screen.setText(str);
-
-        }
-
-    }*/
-  /*  private double isInteger(String value)
-    {
-        double ret = -1.0;
-        try {
-            ret = Double.parseDouble(value);
-        }catch(NumberFormatException ex)
-        {
-
-        }finally {
-            return ret;
-        }
-    }*/
 
     }
 }

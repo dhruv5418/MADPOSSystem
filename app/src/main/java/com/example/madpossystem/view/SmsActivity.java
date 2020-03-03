@@ -21,9 +21,19 @@ import com.example.madpossystem.view.MainActivity;
 
 public class SmsActivity extends AppCompatActivity {
 
+    /**
+     * EditText mobileNo and Message
+     */
     EditText mobileno,message;
+    /**
+     * Button to sendSms
+     */
     Button sendsms;
 
+    /**
+     * onCreate method with onClickListener for sms sending intent.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

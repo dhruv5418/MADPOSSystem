@@ -17,7 +17,7 @@ import java.math.RoundingMode;
 
 public class MainActivity extends AppCompatActivity {
     /**
-     *
+     * on create method.
      * @param savedInstanceState
      */
     @Override
@@ -27,10 +27,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-double priceBeforeTaxes;
+    /**
+     * store the price to display when radio button change
+     */
+    double priceBeforeTaxes;
 
     /**
-     *
+     * method to show vehicle price by radio button clicking.
      * @param view
      */
     public void radioCheckedChanged(View view) {
@@ -69,7 +72,7 @@ double priceBeforeTaxes;
     }
 
     /**
-     *
+     * code to be executed on calculate button press.
      * @param view
      */
     public void calculation(View view) {
@@ -102,7 +105,7 @@ double priceBeforeTaxes;
     }
 
     /**
-     *
+     * launce activity when click on simple message button.
      * @param view
      */
     public void launchSecondActivity(View view) {
@@ -110,22 +113,38 @@ double priceBeforeTaxes;
         startActivity(intent);
     }
 
+    /**
+     * launce activity Calculator when click on calculator button.
+     * @param view
+     */
     public void launchCalculatorActivity(View view) {
         Intent intent=new Intent(this,CalculatorActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * launce activity Email when click on Email button.
+     * @param view
+     */
     public void launchEmailActivity(View view) {
         Intent intent=new Intent(this, EmailActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * launce activity SMS when click on SMS button.
+     * @param view
+     */
     public void launchSmsActivity(View view) {
         Intent intent=new Intent(this, SmsActivity.class);
         startActivity(intent);
     }
 
 
+    /**
+     * launce activity CALL click on CALL button.
+     * @param view
+     */
     public void launchCallActivity(View view) {
         Intent intent=new Intent(this, CallActivity.class);
         startActivity(intent);

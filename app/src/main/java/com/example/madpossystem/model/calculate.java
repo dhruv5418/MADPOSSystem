@@ -1,19 +1,31 @@
 package com.example.madpossystem.model;
 
-import android.widget.EditText;
-
-import com.example.madpossystem.R;
 
 public class calculate {
 
-private Double price;
-private Integer quantity;
-private Double taxes;
-private Double subtotal;
-private Double total;
+    /**
+     * store the price
+     */
+    private Double price;
+    /**
+     * store the quantity
+     */
+    private Integer quantity;
+    /**
+     * store the taxes
+     */
+    private Double taxes;
+    /**
+     * store the subtotal
+     */
+    private Double subtotal;
+    /**
+     * store the total
+     */
+    private Double total;
 
     /**
-     *
+     * constructor
      * @param price
      * @param quantity
      */
@@ -23,8 +35,8 @@ private Double total;
     }
 
     /**
-     *
-     * @return
+     * calculate taxes and total.
+     * @return total.
      */
     public Double total(){
         subtotal=price*quantity;
@@ -35,7 +47,7 @@ private Double total;
 
 
     /**
-     *
+     * return tax.
      * @return
      */
     public Double getTaxes() {
@@ -43,7 +55,7 @@ private Double total;
     }
 
     /**
-     *
+     * return total.
      * @return
      */
     public Double getTotal() {

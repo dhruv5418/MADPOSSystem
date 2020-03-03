@@ -12,11 +12,17 @@ import android.widget.Toast;
 import com.example.madpossystem.R;
 
 public class SecondActivity extends AppCompatActivity {
+    /**
+     * static final variable to store message
+     */
     public static final String EXTRA_MESSAGE ="com.example.android.twoactivities.extra.MESSAGE";
+    /**
+     * EditText
+     */
     private EditText mMessageEditText;
 
     /**
-     *
+     * on create method
      * @param savedInstanceState
      */
     @Override
@@ -28,7 +34,7 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * contains call to open new activity with intent with string.
      * @param view
      */
     public void launchThirdActivity(View view) {

@@ -1,4 +1,4 @@
-package com.example.madpossystem;
+package com.example.madpossystem.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,14 +11,33 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.madpossystem.R;
 import com.example.madpossystem.view.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
+    /**
+     * Buttons
+     */
     Button b1,b2;
+    /**
+     * EditText
+     */
     EditText ed1,ed2;
+    /**
+     * TextView
+     */
     TextView tx1;
+    /**
+     * Counter to store total remaining tries
+     */
     int counter = 3;
+
+    /**
+     * onCreate method
+     * finds button and text elements from view.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +51,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Check for login credential given by user are valid or not.
+     * if valid redirect to main activity.
+     * @param view
+     */
     public void login(View view) {
         if(ed1.getText().toString().equals("admin") &&
                 ed2.getText().toString().equals("password")) {
@@ -51,6 +75,10 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * exit the application when click on exit button.
+     * @param view
+     */
     public void exit(View view) {
         finish();
     }
