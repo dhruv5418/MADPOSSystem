@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+    <TextView
+        android:id="@+id/textview"
+        android:layout_marginLeft="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Login System - MAD"
+        android:textSize="35dp" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_marginTop="20dp"
+        android:layout_width="400dp"
+        android:layout_height="176dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/login" />
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="46dp"
+        android:focusable="true"
+        android:hint="Enter Username" />
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:ems="10"
+        android:hint="Enter Password"
+        android:inputType="textPassword" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:text="Attempts Left:"
+        android:textSize="20dp" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/textview"
+        android:layout_toRightOf="@+id/textview"
+        android:text=" "
+        android:textSize="15dp" />
+    <Button
+        android:id="@+id/button"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/textview"
+        android:layout_toLeftOf="@+id/textview"
+        android:text="login"
+        android:textSize="20dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="login"
+        />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/textview"
+        android:layout_toRightOf="@+id/textview"
+        android:text="Exit"
+        android:textSize="15dp"
+        android:onClick="exit"/>
+
+</LinearLayout>
